@@ -7,8 +7,12 @@ const generateTarget = () => {
     return Math.floor(Math.random() * 9) + 1
 }
 
+const getAbsoluteDistance = (x, y) => {
+    return Math.abs(x - y);
+}
+
 const compareGuesses = (human, computer, target) => {
-    return Math.abs(human - target) < Math.abs(computer - target);
+    return getAbsoluteDistance(human, target) < getAbsoluteDistance(computer, target);
 }
 
 const updateScore = winner => {
@@ -22,4 +26,5 @@ const updateScore = winner => {
 const advanceRound = () => {
     ++currentRoundNumber;
 }
+
 
